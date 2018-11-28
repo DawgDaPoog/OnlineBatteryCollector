@@ -13,8 +13,28 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ONLINEBATTERYCOLLECT_OnlineBatteryCollectGameMode_generated_h
 
-#define OnlineBatteryCollect_Source_OnlineBatteryCollect_OnlineBatteryCollectGameMode_h_12_RPC_WRAPPERS
-#define OnlineBatteryCollect_Source_OnlineBatteryCollect_OnlineBatteryCollectGameMode_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define OnlineBatteryCollect_Source_OnlineBatteryCollect_OnlineBatteryCollectGameMode_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetDecayRate) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(float*)Z_Param__Result=P_THIS->GetDecayRate(); \
+		P_NATIVE_END; \
+	}
+
+
+#define OnlineBatteryCollect_Source_OnlineBatteryCollect_OnlineBatteryCollectGameMode_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetDecayRate) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(float*)Z_Param__Result=P_THIS->GetDecayRate(); \
+		P_NATIVE_END; \
+	}
+
+
 #define OnlineBatteryCollect_Source_OnlineBatteryCollect_OnlineBatteryCollectGameMode_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAOnlineBatteryCollectGameMode(); \
@@ -57,7 +77,11 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AOnlineBatteryCollectGameMode); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AOnlineBatteryCollectGameMode)
 
 
-#define OnlineBatteryCollect_Source_OnlineBatteryCollect_OnlineBatteryCollectGameMode_h_12_PRIVATE_PROPERTY_OFFSET
+#define OnlineBatteryCollect_Source_OnlineBatteryCollect_OnlineBatteryCollectGameMode_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__PowerDrainDelay() { return STRUCT_OFFSET(AOnlineBatteryCollectGameMode, PowerDrainDelay); } \
+	FORCEINLINE static uint32 __PPO__DecayRate() { return STRUCT_OFFSET(AOnlineBatteryCollectGameMode, DecayRate); }
+
+
 #define OnlineBatteryCollect_Source_OnlineBatteryCollect_OnlineBatteryCollectGameMode_h_9_PROLOG
 #define OnlineBatteryCollect_Source_OnlineBatteryCollect_OnlineBatteryCollectGameMode_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

@@ -1,0 +1,23 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-OnlineBatteryCollect-1896.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\OnlineBatteryCollectEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\OnlineBatteryCollect.cpp.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\OnlineBatteryCollectCharacter.cpp.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\OnlineBatteryCollectGameMode.cpp.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\BatteryPickup.cpp.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\Pickup.cpp.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\SpawnVolume.cpp.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\BatteryPickup.gen.cpp.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\OnlineBatteryCollect.init.gen.cpp.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\OnlineBatteryCollectCharacter.gen.cpp.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\OnlineBatteryCollectGameMode.gen.cpp.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\Pickup.gen.cpp.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\SpawnVolume.gen.cpp.obj"
+"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\PCLaunch.rc.res"
+/OUT:"C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Intermediate\Build\Win64\UE4Editor\Development\OnlineBatteryCollect\UE4Editor-OnlineBatteryCollect-1896.lib"

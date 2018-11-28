@@ -1,3 +1,3 @@
-C:\Unreal Projects\OnlineBatteryCollect\Source\OnlineBatteryCollect\OnlineBatteryCollect.Build.cs
-C:\Unreal Projects\OnlineBatteryCollect\Source\OnlineBatteryCollect.Target.cs
-C:\Unreal Projects\OnlineBatteryCollect\Source\OnlineBatteryCollectEditor.Target.cs
+C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Source\OnlineBatteryCollect\OnlineBatteryCollect.Build.cs
+C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Source\OnlineBatteryCollect.Target.cs
+C:\Unreal Projects\OnlineBatteryCollectWGit\OnlineBatteryCollect\Source\OnlineBatteryCollectEditor.Target.cs
