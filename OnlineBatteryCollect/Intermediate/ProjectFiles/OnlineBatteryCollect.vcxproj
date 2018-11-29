@@ -84,7 +84,7 @@
 		</ProjectConfiguration>
 	</ItemGroup>
 	<PropertyGroup Label="Globals">
-		<ProjectGuid>{3EA63A69-DEDE-4021-B2DB-BAD729B063DB}</ProjectGuid>
+		<ProjectGuid>{58396C4E-EDA9-407A-BC35-87C5877FB5B5}</ProjectGuid>
 		<Keyword>MakeFileProj</Keyword>
 		<RootNamespace>OnlineBatteryCollect</RootNamespace>
 		<PlatformToolset>v141</PlatformToolset>

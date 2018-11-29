@@ -77,5 +77,7 @@ Plugins/*/Intermediate/*
 DerivedDataCache/*
 *.response
 *.exp
-OnlineBatteryCollect/Saved/
-OnlineBatteryCollect/Intermediate/
+OnlineBatteryCollect/Saved/*/
+OnlineBatteryCollect/Intermediate/*/
+OnlineBatteryCollect/Binaries/*/
+OnlineBatteryCollect/Config/*/
