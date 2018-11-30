@@ -1,82 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<ItemGroup>
-		<None Include="..\..\OnlineBatteryCollect.uproject" />
-		<Filter Include="Source">
-			<UniqueIdentifier>{BAD1E9F9-4F01-4CD6-A5B9-CAFFE1F031E9}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Source\OnlineBatteryCollect.Target.cs">
-			<Filter>Source</Filter>
-		</None >
-		<None Include="..\..\Source\OnlineBatteryCollectEditor.Target.cs">
-			<Filter>Source</Filter>
-		</None >
-		<Filter Include="Config">
-			<UniqueIdentifier>{E2BCC11A-5418-45C6-BF16-8D8E708E62CC}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Config\DefaultEditor.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultEngine.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultGame.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultInput.ini">
-			<Filter>Config</Filter>
-		</None >
-		<Filter Include="Source\OnlineBatteryCollect">
-			<UniqueIdentifier>{D1621D99-F48D-4D2D-8DAF-851711FF4D32}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollect.Build.cs">
-			<Filter>Source\OnlineBatteryCollect</Filter>
-		</None >
-		<ClCompile Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollect.cpp">
-			<Filter>Source\OnlineBatteryCollect</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollect.h">
-			<Filter>Source\OnlineBatteryCollect</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollectCharacter.cpp">
-			<Filter>Source\OnlineBatteryCollect</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollectCharacter.h">
-			<Filter>Source\OnlineBatteryCollect</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollectGameMode.cpp">
-			<Filter>Source\OnlineBatteryCollect</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollectGameMode.h">
-			<Filter>Source\OnlineBatteryCollect</Filter>
-		</ClInclude >
-		<Filter Include="Source\OnlineBatteryCollect\Puckups">
-			<UniqueIdentifier>{F8EAD1E5-0E57-4A58-8B26-AA832248E137}</UniqueIdentifier>
-		</Filter>
-		<ClCompile Include="..\..\Source\OnlineBatteryCollect\Puckups\BatteryPickup.cpp">
-			<Filter>Source\OnlineBatteryCollect\Puckups</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\OnlineBatteryCollect\Puckups\BatteryPickup.h">
-			<Filter>Source\OnlineBatteryCollect\Puckups</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\OnlineBatteryCollect\Puckups\Pickup.cpp">
-			<Filter>Source\OnlineBatteryCollect\Puckups</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\OnlineBatteryCollect\Puckups\Pickup.h">
-			<Filter>Source\OnlineBatteryCollect\Puckups</Filter>
-		</ClInclude >
-		<Filter Include="Source\OnlineBatteryCollect\Volumes">
-			<UniqueIdentifier>{6E92D4FE-2F23-42DE-A58F-8370B531BF17}</UniqueIdentifier>
-		</Filter>
-		<ClCompile Include="..\..\Source\OnlineBatteryCollect\Volumes\SpawnVolume.cpp">
-			<Filter>Source\OnlineBatteryCollect\Volumes</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\OnlineBatteryCollect\Volumes\SpawnVolume.h">
-			<Filter>Source\OnlineBatteryCollect\Volumes</Filter>
-		</ClInclude >
-	</ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\OnlineBatteryCollect.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{BAD1E9F9-4F01-4CD6-A5B9-CAFFE1F031E9}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\OnlineBatteryCollect.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\OnlineBatteryCollectEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{E2BCC11A-5418-45C6-BF16-8D8E708E62CC}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\OnlineBatteryCollect">
+      <UniqueIdentifier>{D1621D99-F48D-4D2D-8DAF-851711FF4D32}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollect.Build.cs">
+      <Filter>Source\OnlineBatteryCollect</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollect.cpp">
+      <Filter>Source\OnlineBatteryCollect</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollect.h">
+      <Filter>Source\OnlineBatteryCollect</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollectCharacter.cpp">
+      <Filter>Source\OnlineBatteryCollect</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollectCharacter.h">
+      <Filter>Source\OnlineBatteryCollect</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollectGameMode.cpp">
+      <Filter>Source\OnlineBatteryCollect</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OnlineBatteryCollect\OnlineBatteryCollectGameMode.h">
+      <Filter>Source\OnlineBatteryCollect</Filter>
+    </ClInclude>
+    <Filter Include="Source\OnlineBatteryCollect\Puckups">
+      <UniqueIdentifier>{F8EAD1E5-0E57-4A58-8B26-AA832248E137}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OnlineBatteryCollect\Puckups\BatteryPickup.cpp">
+      <Filter>Source\OnlineBatteryCollect\Puckups</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OnlineBatteryCollect\Puckups\BatteryPickup.h">
+      <Filter>Source\OnlineBatteryCollect\Puckups</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\OnlineBatteryCollect\Puckups\Pickup.cpp">
+      <Filter>Source\OnlineBatteryCollect\Puckups</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OnlineBatteryCollect\Puckups\Pickup.h">
+      <Filter>Source\OnlineBatteryCollect\Puckups</Filter>
+    </ClInclude>
+    <Filter Include="Source\OnlineBatteryCollect\Volumes">
+      <UniqueIdentifier>{6E92D4FE-2F23-42DE-A58F-8370B531BF17}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OnlineBatteryCollect\Volumes\SpawnVolume.cpp">
+      <Filter>Source\OnlineBatteryCollect\Volumes</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OnlineBatteryCollect\Volumes\SpawnVolume.h">
+      <Filter>Source\OnlineBatteryCollect\Volumes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\OnlineBatteryCollect\PlayerHUD.h">
+      <Filter>Source\OnlineBatteryCollect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OnlineBatteryCollect\OBCGameState.h">
+      <Filter>Source\OnlineBatteryCollect</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\OnlineBatteryCollect\PlayerHUD.cpp">
+      <Filter>Source\OnlineBatteryCollect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OnlineBatteryCollect\OBCGameState.cpp">
+      <Filter>Source\OnlineBatteryCollect</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

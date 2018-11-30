@@ -5,6 +5,7 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/World.h"
 #include "TimerManager.h"
+#include "GameFramework/HUD.h"
 
 AOnlineBatteryCollectGameMode::AOnlineBatteryCollectGameMode()
 {
@@ -15,19 +16,51 @@ AOnlineBatteryCollectGameMode::AOnlineBatteryCollectGameMode()
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
 
+	// Set the HUD class used in game
+	static ConstructorHelpers::FClassFinder<AHUD> PlayerHUDClass(TEXT("/Game/Blueprints/BP_PlayerHUD"));
+	if (PlayerHUDClass.Class != NULL)
+	{
+		HUDClass = PlayerHUDClass.Class;
+	}
+
+
 	//Base value decay rate
 	DecayRate = 0.05f;
 
 	//Base value for how frequently to drain power
 	PowerDrainDelay = 0.25f;
+
+	// Base value for power to win multiplier
+	PowerToWinMultiplier = 1.5f;
 }
 void AOnlineBatteryCollectGameMode::BeginPlay()
 {
 	GetWorldTimerManager().SetTimer(PowerDrainTimer, this, &AOnlineBatteryCollectGameMode::DrainPowerOverTime, PowerDrainDelay, true);
+
+	UWorld* World = GetWorld();
+	check(World);
+
+	// Go through all the characters in the game
+	for (FConstControllerIterator It = World->GetControllerIterator(); It; ++It)
+	{
+		if (APlayerController* PlayerController = Cast<APlayerController>(*It))
+		{
+			if (AOnlineBatteryCollectCharacter* BatteryCharacter = Cast<AOnlineBatteryCollectCharacter>(PlayerController->GetPawn()))
+			{
+				PowerToWinMultiplier = BatteryCharacter->GetInitialPower() *PowerToWinMultiplier;
+				break;
+			}
+		}
+	}
 }
 float AOnlineBatteryCollectGameMode::GetDecayRate()
 {
 	return DecayRate;
+}
+
+float AOnlineBatteryCollectGameMode::GetPowerToWinMultiplier()
+{
+	return PowerToWinMultiplier;
 }
 
 void AOnlineBatteryCollectGameMode::DrainPowerOverTime()
