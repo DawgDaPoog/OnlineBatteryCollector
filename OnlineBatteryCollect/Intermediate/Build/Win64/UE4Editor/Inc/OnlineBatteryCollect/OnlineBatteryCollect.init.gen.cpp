@@ -19,8 +19,8 @@ void EmptyLinkFunctionForGeneratedCodeOnlineBatteryCollect_init() {}
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/OnlineBatteryCollect",
 				PKG_CompiledIn | 0x00000000,
-				0xCA44EA5B,
-				0x8DAD2842,
+				0x3E2191AB,
+				0x43EB0EDF,
 				nullptr, 0,
 				METADATA_PARAMS(nullptr, 0)
 			};

@@ -7,6 +7,8 @@
 #include "TimerManager.h"
 #include "GameFramework/HUD.h"
 
+#include "OBCGameState.h"
+
 AOnlineBatteryCollectGameMode::AOnlineBatteryCollectGameMode()
 {
 	// set default pawn class to our Blueprinted character
@@ -23,6 +25,8 @@ AOnlineBatteryCollectGameMode::AOnlineBatteryCollectGameMode()
 		HUDClass = PlayerHUDClass.Class;
 	}
 
+	// Set the type of game state used in a game
+	GameStateClass = AOBCGameState::StaticClass();
 
 	//Base value decay rate
 	DecayRate = 0.05f;
@@ -40,6 +44,9 @@ void AOnlineBatteryCollectGameMode::BeginPlay()
 	UWorld* World = GetWorld();
 	check(World);
 
+	AOBCGameState* CurrentGameState = Cast<AOBCGameState>(GameState);
+	if (!CurrentGameState) return;
+
 	// Go through all the characters in the game
 	for (FConstControllerIterator It = World->GetControllerIterator(); It; ++It)
 	{
@@ -47,7 +54,7 @@ void AOnlineBatteryCollectGameMode::BeginPlay()
 		{
 			if (AOnlineBatteryCollectCharacter* BatteryCharacter = Cast<AOnlineBatteryCollectCharacter>(PlayerController->GetPawn()))
 			{
-				PowerToWinMultiplier = BatteryCharacter->GetInitialPower() *PowerToWinMultiplier;
+				CurrentGameState->PowerToWin = BatteryCharacter->GetInitialPower() *PowerToWinMultiplier;
 				break;
 			}
 		}
