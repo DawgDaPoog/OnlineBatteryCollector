@@ -42,6 +42,13 @@ protected:
 	// Power that is needed to win the game
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Power", meta = (BlueprintProtected = "true"))
 		float PowerToWinMultiplier;
+
+	// Track the number of players who died
+	int32 DeadPlayerCount;
+
+private:
+	// Array of all spawn volumes in the level
+	TArray<class ASpawnVolume*> SpawnVolumeActors;
 };
 
 

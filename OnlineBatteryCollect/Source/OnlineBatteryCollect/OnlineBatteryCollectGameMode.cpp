@@ -6,8 +6,9 @@
 #include "Engine/World.h"
 #include "TimerManager.h"
 #include "GameFramework/HUD.h"
-
+#include "Kismet/GameplayStatics.h"
 #include "OBCGameState.h"
+#include "Volumes/SpawnVolume.h"
 
 AOnlineBatteryCollectGameMode::AOnlineBatteryCollectGameMode()
 {
@@ -36,6 +37,9 @@ AOnlineBatteryCollectGameMode::AOnlineBatteryCollectGameMode()
 
 	// Base value for power to win multiplier
 	PowerToWinMultiplier = 1.5f;
+
+	// Starting dead players
+	DeadPlayerCount = 0;
 }
 void AOnlineBatteryCollectGameMode::BeginPlay()
 {
@@ -45,7 +49,22 @@ void AOnlineBatteryCollectGameMode::BeginPlay()
 	check(World);
 
 	AOBCGameState* CurrentGameState = Cast<AOBCGameState>(GameState);
-	if (!CurrentGameState) return;
+	check(CurrentGameState);
+
+	// Reset our stats
+	DeadPlayerCount = 0;
+
+	// Gather all the spawn volumes in the level
+	TArray<AActor*> FoundActors;
+	UGameplayStatics::GetAllActorsOfClass(World, ASpawnVolume::StaticClass(),FoundActors);
+	for (auto Actor : FoundActors)
+	{
+		if (ASpawnVolume* TestSpawnVolume = Cast<ASpawnVolume>(Actor))
+		{
+			// Add the volume to the array and ensure that it is unique
+			SpawnVolumeActors.AddUnique(TestSpawnVolume);
+		}
+	}
 
 	// Go through all the characters in the game
 	for (FConstControllerIterator It = World->GetControllerIterator(); It; ++It)
@@ -59,6 +78,8 @@ void AOnlineBatteryCollectGameMode::BeginPlay()
 			}
 		}
 	}
+
+	CurrentGameState->SetCurrentState(EBatteryPlayState::EPlaying);
 }
 float AOnlineBatteryCollectGameMode::GetDecayRate()
 {
@@ -76,6 +97,9 @@ void AOnlineBatteryCollectGameMode::DrainPowerOverTime()
 	UWorld* World = GetWorld();
 	check(World);
 
+	AOBCGameState* CurrentGameState = Cast<AOBCGameState>(GameState);
+	check(CurrentGameState);
+
 	// Go through all the characters in the game
 	for (FConstControllerIterator It = World->GetControllerIterator(); It; ++It)
 	{
@@ -83,9 +107,25 @@ void AOnlineBatteryCollectGameMode::DrainPowerOverTime()
 		{
 			if (AOnlineBatteryCollectCharacter* BatteryCharacter = Cast<AOnlineBatteryCollectCharacter>(PlayerController->GetPawn()))
 			{
-				if (BatteryCharacter->GetCurrentPower() > 0)
+				if (BatteryCharacter->GetCurrentPower() > CurrentGameState->PowerToWin)
+				{
+					CurrentGameState->SetCurrentState(EBatteryPlayState::EWon);
+				}
+				else if (BatteryCharacter->GetCurrentPower() > 0)
 				{
 					BatteryCharacter->UpdatePower(-PowerDrainDelay * DecayRate*(BatteryCharacter->GetInitialPower()));
+				}
+				else
+				{
+					// Player died
+					BatteryCharacter->DetachFromControllerPendingDestroy();
+					DeadPlayerCount++;
+
+					// See if this is the last player that died
+					if (DeadPlayerCount >= GetNumPlayers())
+					{
+						CurrentGameState->SetCurrentState(EBatteryPlayState::EGameOver);
+					}
 				}
 			}
 		}

@@ -7,6 +7,8 @@ AOBCGameState::AOBCGameState()
 {
 	// Initializing PowerToWin to avoid empty variable
 	PowerToWin = 0.f;
+
+	CurrentState = EBatteryPlayState::EUnknown;
 }
 
 void AOBCGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -14,4 +16,23 @@ void AOBCGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME(AOBCGameState, PowerToWin);
+	DOREPLIFETIME(AOBCGameState, CurrentState);
+}
+
+EBatteryPlayState AOBCGameState::GetCurrentState() const
+{
+	return CurrentState;
+}
+
+void AOBCGameState::SetCurrentState(EBatteryPlayState NewState)
+{
+	if (Role = ROLE_Authority)
+	{
+		CurrentState = NewState;
+	}
+}
+
+void AOBCGameState::OnRep_CurrentState()
+{
+
 }

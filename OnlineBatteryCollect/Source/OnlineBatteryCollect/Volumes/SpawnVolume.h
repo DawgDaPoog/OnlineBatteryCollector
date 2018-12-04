@@ -42,6 +42,10 @@ public:
 	//Finds random point in the box and returns it
 	UFUNCTION(BlueprintPure, Category = "Spawning")
 	FVector GetRandomPointInVolume();
+
+	// To toggle spawning on or off
+	UFUNCTION(BlueprintCallable, Category = "Spawning")
+	void SetSpawningActive(bool bIsActive);
 		
 private:
 	// Main Box Component
@@ -53,4 +57,5 @@ private:
 	
 	// Actual spawn delay determined from MaxRange and MinRange
 	float SpawnDelay;
+
 };
